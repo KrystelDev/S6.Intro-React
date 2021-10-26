@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Escena = ({consell}) => {
+const Escena = ({escena}) => {
     return ( 
         <div>
-            <h4>{consell}</h4>
+            <h4>{escena}</h4>
         </div>
      );
 }
