@@ -1,9 +1,11 @@
 import React from 'react';
+import './escena.css';
+
 
 const Escena = ({frase}) => {
     return ( 
-        <div>
-            <h4>{frase}</h4>
+        <div className="escena">
+            <p>{frase}</p>
         </div>
      );
 }
