@@ -1,9 +1,11 @@
 import React from 'react';
 
-const escena = () => {
+const Escena = ({consell}) => {
     return ( 
-        <p>"El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial"</p>
+        <div>
+            <h4>{consell}</h4>
+        </div>
      );
 }
  
-export default escena;
+export default Escena;
