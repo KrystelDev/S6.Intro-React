@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Escena = ({escena}) => {
+const Escena = ({frase}) => {
     return ( 
         <div>
-            <h4>{escena}</h4>
+            <h4>{frase}</h4>
         </div>
      );
 }

@@ -10,7 +10,7 @@ function App() {
     <Fragment>
       
       {Consells.map((consell, index) => ( // https://reactjs.org/docs/lists-and-keys.html#keys
-      <Escena key={index} escena={consell} /> //Prop {consell}
+      <Escena key={index} frase={consell} /> //Prop {consell}
       ))}
       
     </Fragment>
