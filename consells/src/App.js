@@ -13,6 +13,7 @@ function App() {
       <Escena key={index} frase={consell} /> //Prop {consell}
       ))}
       
+      
     </Fragment>
   );
 }

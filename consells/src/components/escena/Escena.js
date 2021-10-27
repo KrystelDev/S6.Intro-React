@@ -1,12 +1,20 @@
 import React from 'react';
-import './escena.css';
+// import './escena.css'; + div className="escena"..
+import styled from 'styled-components';
 
 
 const Escena = ({frase}) => {
+
+    const Escenes = styled.div`
+        border: 2px solid black;
+        border-radius: 50px;
+        margin: 20px 5px 0px 20px;
+        text-align: center;`;
+
     return ( 
-        <div className="escena">
+        <Escenes>
             <p>{frase}</p>
-        </div>
+        </Escenes>
      );
 }
  
