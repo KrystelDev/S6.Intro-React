@@ -7,6 +7,7 @@ import ReactDOM from "react-dom";
 var posicion = 0;
 
 function App() {
+  
   function sumarPosicion() {
     posicion++;
     if (posicion > Consells.length - 1) {
