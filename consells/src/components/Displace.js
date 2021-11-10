@@ -18,13 +18,13 @@ const Container = styled.div`
   margin: 2px 2px 0px 2px;
 `;
 
-const Desplacar = ({ sumarPosicion, restarPosicion }) => {
+const Desplacar = ({ addPosition, subtractPosition }) => {
   return (
     <Container>
       <Button
         type="button"
         onClick={() => {
-          restarPosicion();
+          subtractPosition();
         }}
       >
         Anterior
@@ -32,12 +32,12 @@ const Desplacar = ({ sumarPosicion, restarPosicion }) => {
       {/* <Button 
         type="button" 
         onClick={() => {
-            sumarPosicion();
+            addPosition();
         }}
       >
         Següent
       </Button> */}
-      <Button type="button" onClick={sumarPosicion}>
+      <Button type="button" onClick={addPosition}>
         Següent
       </Button>
     </Container>

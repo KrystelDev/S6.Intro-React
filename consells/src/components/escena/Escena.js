@@ -1,7 +1,7 @@
 import React from "react";
 // import './escena.css'; + div className="escena"..
 
-const seleccionada = {
+const selected = {
   border: `2px solid black`,
   borderRadius: '50px',
   margin: '20px 20px 0px 20px',
@@ -10,7 +10,7 @@ const seleccionada = {
   backgroundColor: '#f5b7b1',
 };
 
-const noSeleccionada = {
+const noSelected = {
   border: `2px solid black`,
   borderRadius: '50px',
   margin: '20px 20px 0px 20px',
@@ -19,15 +19,15 @@ const noSeleccionada = {
   opacity: '0.6'
 };
 
-const Escena = ({ index, consell, posicion, seleccionarEscena }) => {
-  console.log("index: " + index + " posicion: " + posicion);
+const Escena = ({ index, consell, position, selectScene }) => {
+  console.log("Index: " + index + " Position: " + position);
 
   return (
     <div
       key={index}
-      posicion={posicion}
+      position={position}
       index={index}
-      style={seleccionarEscena !== 0 ? seleccionada : noSeleccionada}
+      style={selectScene !== 0 ? selected : noSelected}
     >
       <p>{consell}</p>
     </div>

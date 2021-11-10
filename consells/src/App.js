@@ -1,23 +1,20 @@
 import React, { useState } from "react";
-import Benvingut from "./components/Benvingut";
-import EscenasPage from './pages/EscenasPage';
-import ReactDOM from "react-dom";
-
-
+import WellcomePage  from "./pages/WellcomePage";
+import ScenesPage from './pages/ScenesPage';
 
 function App() {
   
-  let [primeraVez, setPrimeraVez] = useState(true)
+  let [firstTime, setFirstTime] = useState(true)
 
-  function cambiarPrimeraVez() {
-    setPrimeraVez(false);
-    console.log("funcio: " + primeraVez)
+  function changeFirstTime() {
+    setFirstTime(false);
+    console.log("funcio: " + firstTime)
   }
-  console.log(primeraVez)
-  return (primeraVez !== true ? (
-    <EscenasPage />
+  console.log(firstTime)
+  return (firstTime !== true ? (
+    <ScenesPage />
   ) : (
-    <Benvingut cambiarPrimeraVez={cambiarPrimeraVez} />
+    <WellcomePage changeFirstTime={changeFirstTime} />
   ));
 }
 
