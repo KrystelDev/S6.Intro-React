@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Pantalla from './components/Pantalla'
+import App from './App';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Pantalla />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
