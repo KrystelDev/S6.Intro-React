@@ -1,37 +1,36 @@
-import React, { Fragment } from "react";
+import React, { useState } from "react";
 import Escena from "../components/escena/Escena";
 import Consells from "../components/Consells";
 import Displace from "../components/Displace";
-import ReactDOM from 'react-dom';
-
-let position = 0;
 
 function App() {
+  let [position, setPosition] = useState(0);
+
+  console.log("Position App: " + position);
 
   function addPosition() {
-    position++;
-    if (position > Consells.length - 1) {
-      position = 0;
+    if (position >= Consells.length - 1) {
+      setPosition(0);
+    } else {
+      position++;
+      setPosition(position);
     }
     console.log("addPosition: " + position);
-    ReactDOM.render(<App />, document.getElementById('root'));
   }
 
   function subtractPosition() {
-    position--;
-    if (position < 0) {
-      position = Consells.length - 1;
+    if (position <= 0) {
+      setPosition(Consells.length - 1);
+    } else {
+      position--;
+      setPosition(position);
     }
-    console.log("subtractPosition: "+ position);
-    ReactDOM.render(<App />, document.getElementById('root'));
+    console.log("subtractPosition: " + position);
   }
 
   return (
-    <Fragment>
-      <Displace
-        addPosition={addPosition}
-        subtractPosition={subtractPosition}
-      />
+    <div>
+      <Displace addPosition={addPosition} subtractPosition={subtractPosition} />
 
       {Consells.map(
         (
@@ -40,14 +39,14 @@ function App() {
         ) => (
           <Escena
             key={index}
-            consell={consell}
+            consell={consell.txt}
             position={position}
             index={index}
             selectScene={position === index ? 1 : 0}
           /> //Prop {consell}
         )
       )}
-    </Fragment>
+    </div>
   );
 }
 

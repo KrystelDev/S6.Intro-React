@@ -1,21 +1,33 @@
-import React, { useState } from "react";
-import WellcomePage  from "./pages/WellcomePage";
-import ScenesPage from './pages/ScenesPage';
+import React, { Fragment, useState } from "react";
+import WellcomePage from "./pages/WellcomePage";
+import ScenesPage from "./pages/ScenesPage";
+import Footer from "./components/Footer";
 
 function App() {
-  
-  let [firstTime, setFirstTime] = useState(true)
+
+  //Its the first time?
+  let [firstTime, setFirstTime] = useState(true);
+
+  //Get the current year
+  const currantYear = new Date().getFullYear();
 
   function changeFirstTime() {
     setFirstTime(false);
-    console.log("funcio: " + firstTime)
+    console.log("funcio: " + firstTime);
   }
-  console.log(firstTime)
-  return (firstTime !== true ? (
-    <ScenesPage />
+
+  console.log(firstTime);
+  return firstTime !== true ? (
+    <Fragment>
+      <ScenesPage />
+      <Footer currantYear={currantYear} />
+    </Fragment>
   ) : (
-    <WellcomePage changeFirstTime={changeFirstTime} />
-  ));
+    <Fragment>
+      <WellcomePage changeFirstTime={changeFirstTime} />
+      <Footer currantYear={currantYear} />
+    </Fragment>
+  );
 }
 
 export default App;

@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 // import './escena.css'; + div className="escena"..
 
 const selected = {
@@ -8,6 +9,7 @@ const selected = {
   textAlign: 'center',
   fontSize: 'small',
   backgroundColor: '#f5b7b1',
+  padding: '0.5rem',
 };
 
 const noSelected = {
@@ -16,8 +18,14 @@ const noSelected = {
   margin: '20px 20px 0px 20px',
   textAlign: 'center',
   fontSize: 'small',
-  opacity: '0.6'
+  opacity: '0.6',
+  backgroundColor: 'white',
+  padding: '0.5rem',
 };
+
+const Line = styled.p `
+  padding: 4px;
+`;
 
 const Escena = ({ index, consell, position, selectScene }) => {
   console.log("Index: " + index + " Position: " + position);
@@ -29,7 +37,7 @@ const Escena = ({ index, consell, position, selectScene }) => {
       index={index}
       style={selectScene !== 0 ? selected : noSelected}
     >
-      <p>{consell}</p>
+      <Line>{consell}</Line >
     </div>
   );
 };
