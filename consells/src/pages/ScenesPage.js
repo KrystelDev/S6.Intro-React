@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import Escena from "../components/escena/Escena";
 import Consells from "../components/Consells";
 import Displace from "../components/Displace";
+import styled from "styled-components";
+import img1 from "../img/1.jpg";
+import img2 from "../img/2.jpg";
+import img3 from "../img/3.jpg";
+import img4 from "../img/4.jpg";
+
+let Content = styled.div`
+    background-image: url(${img1});
+    height: 90vh;
+    background-repeat: no-repeat;
+  `;
 
 function App() {
   let [position, setPosition] = useState(0);
@@ -28,8 +39,45 @@ function App() {
     console.log("subtractPosition: " + position);
   }
 
+  switch (position) {
+    case 0:
+      Content = styled.div`
+        background-image: url(${img1});
+        height: 90vh;
+        background-repeat: no-repeat;
+      `;
+      break;
+
+    case 1:
+      Content = styled.div`
+        background-image: url(${img2});
+        height: 90vh;
+        background-repeat: no-repeat;
+      `;
+      break;
+
+    case 2:
+      Content = styled.div`
+        background-image: url(${img3});
+        height: 90vh;
+        background-repeat: no-repeat;
+      `;
+      break;
+
+    case 3:
+      Content = styled.div`
+        background-image: url(${img4});
+        height: 90vh;
+        background-repeat: no-repeat;
+      `;
+      break;
+
+    default:
+      break;
+  }
+
   return (
-    <div>
+    <Content>
       <Displace addPosition={addPosition} subtractPosition={subtractPosition} />
 
       {Consells.map(
@@ -46,7 +94,7 @@ function App() {
           /> //Prop {consell}
         )
       )}
-    </div>
+    </Content>
   );
 }
 

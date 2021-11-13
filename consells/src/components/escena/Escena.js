@@ -9,7 +9,7 @@ const selected = {
   textAlign: 'center',
   fontSize: 'small',
   backgroundColor: '#f5b7b1',
-  padding: '0.5rem',
+  padding: '0 rem 0.5rem 0 rem 0.5rem',
 };
 
 const noSelected = {
@@ -20,7 +20,7 @@ const noSelected = {
   fontSize: 'small',
   opacity: '0.6',
   backgroundColor: 'white',
-  padding: '0.5rem',
+  padding: '0 rem 0.5rem 0 rem 0.5rem',
 };
 
 const Line = styled.p `
