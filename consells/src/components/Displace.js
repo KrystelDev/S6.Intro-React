@@ -15,7 +15,7 @@ const Container = styled.div`
   text-align: center;
   size: 3px;
   height: 10vh;
-  margin: 2px 2px 0px 2px;
+  padding: 0.5rem;
 `;
 
 const Desplacar = ({ addPosition, subtractPosition }) => {

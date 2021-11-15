@@ -3,78 +3,38 @@ import Escena from "../components/escena/Escena";
 import Consells from "../components/Consells";
 import Displace from "../components/Displace";
 import styled from "styled-components";
-import img1 from "../img/1.jpg";
-import img2 from "../img/2.jpg";
-import img3 from "../img/3.jpg";
-import img4 from "../img/4.jpg";
+import Footer from "../components/Footer";
 
-let Content = styled.div`
-    background-image: url(${img1});
-    height: 90vh;
-    background-repeat: no-repeat;
-  `;
-
-function App() {
+const ScenesPage = ({ currantYear }) => {
+  //Variable to control the position of the array
   let [position, setPosition] = useState(0);
 
-  console.log("Position App: " + position);
-
+  //addPosition and subtractPosition,they are called from the Displace buttons
   function addPosition() {
-    if (position >= Consells.length - 1) {
-      setPosition(0);
-    } else {
-      position++;
-      setPosition(position);
+    position++;
+    if (position > Consells.length - 1) {
+      position = 0;
     }
-    console.log("addPosition: " + position);
+    setPosition(position);
   }
 
   function subtractPosition() {
-    if (position <= 0) {
-      setPosition(Consells.length - 1);
-    } else {
-      position--;
-      setPosition(position);
+    position--;
+    if (position < 0) {
+      position = Consells.length - 1;
     }
-    console.log("subtractPosition: " + position);
+    setPosition(position);
   }
 
-  switch (position) {
-    case 0:
-      Content = styled.div`
-        background-image: url(${img1});
-        height: 90vh;
-        background-repeat: no-repeat;
-      `;
-      break;
-
-    case 1:
-      Content = styled.div`
-        background-image: url(${img2});
-        height: 90vh;
-        background-repeat: no-repeat;
-      `;
-      break;
-
-    case 2:
-      Content = styled.div`
-        background-image: url(${img3});
-        height: 90vh;
-        background-repeat: no-repeat;
-      `;
-      break;
-
-    case 3:
-      Content = styled.div`
-        background-image: url(${img4});
-        height: 90vh;
-        background-repeat: no-repeat;
-      `;
-      break;
-
-    default:
-      break;
-  }
+  //Phrase style
+  let Content = styled.div`
+    background-image: url(${Consells[position].img});
+    height: 100vh;
+    background-repeat: no-repeat;
+    margin: -8px;
+    background-position: center bottom;
+    background-size: cover;
+  `;
 
   return (
     <Content>
@@ -94,8 +54,11 @@ function App() {
           /> //Prop {consell}
         )
       )}
+
+      <Footer currantYear={currantYear} />
+      
     </Content>
   );
 }
 
-export default App;
+export default ScenesPage;
