@@ -12,15 +12,13 @@ function App() {
   const currantYear = new Date().getFullYear();
 
   function changeFirstTime() {
-    setFirstTime(false);
-    console.log("funcio: " + firstTime);
+    firstTime = false;
+    setFirstTime(firstTime);
   }
 
-  console.log(firstTime);
   return firstTime !== true ? (
     <Fragment>
-      <ScenesPage />
-      <Footer currantYear={currantYear} />
+      <ScenesPage currantYear={currantYear}  />
     </Fragment>
   ) : (
     <Fragment>
